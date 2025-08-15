@@ -1,4 +1,4 @@
-package com.reelzz
+package com.reelzzApp
 
 import android.app.Application
 import com.facebook.react.PackageList
