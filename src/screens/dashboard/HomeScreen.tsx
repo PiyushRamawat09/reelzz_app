@@ -1,11 +1,12 @@
 import { View, Text } from 'react-native'
 import React, { FC } from 'react'
+import CustomView from '../../components/global/CustomView'
 
 const HomeScreen : FC = () => {
   return (
-    <View>
+    <CustomView>
       <Text>HomeScreen</Text>
-    </View>
+    </CustomView>
   )
 }
 
