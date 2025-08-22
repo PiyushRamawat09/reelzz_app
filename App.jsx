@@ -19,7 +19,6 @@ GoogleSignin.configure({
 const App = () => {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <SafeAreaView />
       <StatusBar
         barStyle={'light-content'}
         translucent={Platform.OS === 'ios'}
