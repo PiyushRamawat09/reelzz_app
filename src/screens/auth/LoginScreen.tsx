@@ -1,5 +1,4 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import React from 'react';
+import { View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import CustomSafeAreaView from '../../components/global/CustomSafeAreaView';
 import Lottie from 'lottie-react-native';
 import Animation from '../../assets/animations/login.json';
@@ -11,8 +10,11 @@ import { FONTS } from '../../constants/Fonts';
 import SocialButtonHorizontal from '../../components/global/SocialButtonHorizontal';
 import Icon from 'react-native-vector-icons/Ionicons';
 import GoogleIcon from '../../assets/icons/google.png';
+import { useAppDispatch } from '../../redux/reduxHook';
+import { signInWithFacebook, singInWithGoogle } from '../../redux/SocialLogin';
 
 const LoginScreen = () => {
+  const dispatch = useAppDispatch();
   return (
     <CustomSafeAreaView style={styles.container}>
       <View style={styles.lottieContainer}>
@@ -44,7 +46,7 @@ const LoginScreen = () => {
 
       <SocialButtonHorizontal
         icon={<Icon name="logo-facebook" size={21} color={Colors.text} />}
-        onPress={async () => {}}
+        onPress={async () => await dispatch(signInWithFacebook())}
         text="Continue with Facebook"
         textColor="#fff"
         backgroundColor={Colors.fbColor}
@@ -52,14 +54,16 @@ const LoginScreen = () => {
 
       <SocialButtonHorizontal
         icon={<Image source={GoogleIcon} style={styles.gimg} />}
-        onPress={async () => {}}
+        onPress={async () => await dispatch(singInWithGoogle())}
         text="Continue with Google"
         textColor="#000"
         backgroundColor={Colors.white}
       />
 
-      <TouchableOpacity style = {styles.footerText} activeOpacity={0.5}>
-        <CustomText variant='h8' fontFamily={FONTS.Medium}>Designed and developed by - Piyush Ramawat</CustomText>
+      <TouchableOpacity style={styles.footerText} activeOpacity={0.5}>
+        <CustomText variant="h8" fontFamily={FONTS.Medium}>
+          Designed and developed by - Piyush Ramawat
+        </CustomText>
       </TouchableOpacity>
     </CustomSafeAreaView>
   );
@@ -95,11 +99,11 @@ const styles = StyleSheet.create({
     height: 20,
     width: 20,
   },
-  footerText : {
-    opacity : 0.6,
-    position : "absolute",
-    bottom : 15
-  }
+  footerText: {
+    opacity: 0.6,
+    position: 'absolute',
+    bottom: 15,
+  },
 });
 
 export default LoginScreen;
