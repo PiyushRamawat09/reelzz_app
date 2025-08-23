@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Reelzz</string>
       <!-- Facebook Config Here -->
-    <string name="facebook_app_id">1488088712536443</string>
-    <string name="fb_login_protocol_scheme">fb1488088712536443</string>
-    <string name="facebook_client_token">29443426151aa1d8134458abd76c0557</string>
+    <string name="facebook_app_id">FACEBOOK_APP_ID</string>
+    <string name="fb_login_protocol_scheme">fb_FACEBOOK_APP_ID</string>
+    <string name="facebook_client_token">CLIENT_TOKEN</string>
       <!-- Facebook Config Here -->
 </resources>
